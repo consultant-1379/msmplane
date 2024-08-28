@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configEntity xmlns="http://www.ericsson.com/oss/itpf/deployment/dst/descriptor">
+    <description>msmplane</description>
+    <singleton>false</singleton>
+    <scaleUnit>
+        <loadDrivers>
+            <!--scaleUnit.loadDrivers.loadDriver.name : agreed Name of Load Driver-->
+            <!--scaleUnit.loadDrivers.loadDriver.description : Description of Load Driver in the form Use Case Identifier : load information from FS-->
+            <loadDriver name="numberORadioNE" description="Number of Network Elements managed by msmplane service group is up to 100 in all deployment types."></loadDriver>
+        </loadDrivers>
+        <minimumUnit>
+            <!--minimumUnit.cpuCores : number of vcpu allocated to the VM in vapp deployment-->
+            <!--minimumUnit.cpuMinutes : value for cpu minutes per day required under no load -->
+            <!--minimumUnit.peakCpuMinutes : value for cpu minutes in busy hour required under no load -->
+            <!--minimumUnit.memory : value for memory required under no load-->
+            <!--minimumUnit.profileConversionFormulae : this section is not required to be filled in at present-->
+            <profile>
+                <cpuCores>2</cpuCores>
+                <cpuMinutes>0</cpuMinutes>
+                <peakCpuMinutes>0</peakCpuMinutes>
+                <memory>5120</memory>
+            </profile>
+            <profileConversionFormulae>
+                <cpuCores></cpuCores>
+                <cpuMinutes></cpuMinutes>
+                <peakCpuMinutes></peakCpuMinutes>
+                <memory></memory>
+            </profileConversionFormulae>
+        </minimumUnit>
+        <optimalUnit>
+            <!--optimalUnit.profile.cpuCores : number of vcpu allocated to the VM-->
+            <!--optimalUnit.profile.cpuMinutes : after testing this is the cpu minutes per day used under sustainable load-->
+            <!--optimalUnit.profile.peakCpuMinutes : after testing this is the cpu minutes in a busy hour used under sustainable load-->
+            <!--optimalUnit.profile.memory : during initial introduction this is the RAM allocate3d to the VM when it is introduced into the deployment. after testing it is the maximum memory used under sustainable load-->
+            <!--optimalUnit.profile.cpuCores : No input required-->
+            <!--optimalUnit.profileConversionFormulae.cpuMinutes : using load drivers and parameters identify how the no load cpu minutes (minimumUnit.cpuMinutes) are affected by the load applied to the vm up to the optimalUnit.cpuMinutes value.-->
+            <!--optimalUnit.profileConversionFormulae.peakCpuMinutes : using load drivers and parameters identify how the no load peak cpu minutes (minimumUnit.peakCpuMinutes) are affected by the load applied to the vm up to the optimalUnit.peakCpuMinutes value.-->
+            <!--optimalUnit.profileConversionFormulae.memory : using load drivers and parameters identify how the no load memory minimumUnit.memory is increased by the laod applied to the vm up to the optimalUnit.memory value-->
+            <profile>
+                <cpuCores>2</cpuCores>
+                <cpuMinutes>0</cpuMinutes>
+                <peakCpuMinutes>0</peakCpuMinutes>
+                <memory>5120</memory>
+            </profile>
+            <profileConversionFormulae>
+                <cpuCores>()</cpuCores>
+                <cpuMinutes>()</cpuMinutes>
+                <peakCpuMinutes>()</peakCpuMinutes>
+                <memory>()</memory>
+            </profileConversionFormulae>
+        </optimalUnit>
+    </scaleUnit>
+</configEntity>
